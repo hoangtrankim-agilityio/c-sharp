@@ -1,0 +1,15 @@
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/bin/Debug/net6.0/c-sharp
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/bin/Debug/net6.0/c-sharp.deps.json
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/bin/Debug/net6.0/c-sharp.runtimeconfig.json
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/bin/Debug/net6.0/c-sharp.dll
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/bin/Debug/net6.0/c-sharp.pdb
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/obj/Debug/net6.0/c-sharp.csproj.AssemblyReference.cache
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/obj/Debug/net6.0/c-sharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/obj/Debug/net6.0/c-sharp.AssemblyInfoInputs.cache
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/obj/Debug/net6.0/c-sharp.AssemblyInfo.cs
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/obj/Debug/net6.0/c-sharp.csproj.CoreCompileInputs.cache
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/obj/Debug/net6.0/c-sharp.dll
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/obj/Debug/net6.0/refint/c-sharp.dll
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/obj/Debug/net6.0/c-sharp.pdb
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/obj/Debug/net6.0/c-sharp.genruntimeconfig.cache
+/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/obj/Debug/net6.0/ref/c-sharp.dll
