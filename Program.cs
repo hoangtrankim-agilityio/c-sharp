@@ -201,8 +201,9 @@ class Program
 		// Exercise 8
 		string[] cities =  
 		{  
-				"ROME","LONDON","NAIROBI","CALIFORNIA","ZURICH","NEW DELHI","AMSTERDAM","ABU DHABI", "PARIS"  
+				"ROME","LONDON","NAIROBI","CALIFORNIA","ZURICH","NEW DELHI","AMSTERDAM","ABU DHABI", "PARIS", "NEW YORK"  
 		};
+
 		string charStar = "A";
 		string charEnd = "M"; 
 		Console.Write("\nInput starting character for the string : " + charStar);  
@@ -392,6 +393,237 @@ class Program
 
 		// Exercise 18
 		// TODO: Don't clear 
+
+		// Exercise 19
+		List<string> listOfString19 = new List<string>();
+		listOfString19.Add("m");
+		listOfString19.Add("n");
+		listOfString19.Add("o");
+		listOfString19.Add("p");
+		listOfString19.Add("q");
+
+		List<string> listResult = listOfString19.Where(s => s != "q").ToList();
+
+		Console.Write("\nHere is the list after removing the item 'q' from the list : \n");
+		foreach (var lr19 in listResult)
+		{
+			Console.WriteLine("Char: {0} ", lr19);
+		}
+
+		// Exercise 20
+		int Min20 = 0;
+		int Max20 = 10;
+		int[] n20 = Enumerable
+				.Repeat(0, 10)
+				.Select(i => randNum.Next(Min20, Max20))
+				.ToArray();
+
+		var query20 = 
+			from number20 in n20
+			let sqr20 = number20 * number20
+			where sqr20 > 20
+			select new { 
+				text = "Number = " + number20 + ", "+ "SqrNo = " + sqr20 + "\n"
+			};  
+		
+		Console.Write("The number and its square of an array which is more than 20 : \n");			
+		foreach(var fn20 in query20) 
+		{			
+				Console.Write(fn20.text); 
+		}
+
+		// Exercise 21
+		List<string> listOfString21 = new List<string>();
+		listOfString21.Add("m");
+		listOfString21.Add("n");
+		listOfString21.Add("o");
+		listOfString21.Add("p");
+		listOfString21.Add("q");
+
+		listOfString21.RemoveRange(1, 3);
+
+		Console.Write("\nHere is the list after removing the three items starting from the item index 1 from the list : \n");
+		foreach (var lr21 in listOfString21)
+		{
+			Console.WriteLine("Char: {0} ", lr21);
+		}
+
+		// Exercise 22
+		Console.Write("Input number of strings to  store in the array :");
+		int n22 = Convert.ToInt32(Console.ReadLine()); 
+		string[] arr22 =new string[n22];      
+		Console.Write("\nInput {0} strings for the array  :\n", n22);
+		for(int i22 = 0; i22 < n22; i22++)
+		{
+			Console.Write("Element[{0}] : ", i22);
+			arr22[i22] = Console.ReadLine();	
+		}
+
+		Console.Write("\nInput the minimum length of the item you want to find : ");
+		int minimumLength = Convert.ToInt32(Console.ReadLine());
+
+		var query22 = 
+				from string22 in arr22
+				where string22.Length >= minimumLength 
+				select string22;
+
+		Console.Write("\nThe items of minimum {0} characters are : \n", minimumLength); 
+		foreach (string rs22 in query22)  
+				Console.WriteLine("Item: {0}", rs22);  
+
+		Console.ReadLine();
+
+		// Exercise 23
+		char[] charList23 = { 'A', 'B', 'C' };
+		int[] numList23 = { 1, 2, 3 };
+
+		var cartesianProduct = 
+				from letterList in charList23
+        from numberList in numList23
+				select new { letterList, numberList };
+
+		Console.Write("The Cartesian Product are : \n");
+		foreach (var product in cartesianProduct)
+		{
+				Console.WriteLine(product);
+		}
+
+		// Exercise 24
+		char[] charList24 = { 'A', 'B', 'C' };
+		int[] numList24 = { 1, 2, 3 };
+		string[] colorList24 = { "Green", "Orange" };
+
+		var cartesianProduct24 = 
+				from letter in charList24
+        from number in numList24
+        from colour in colorList24
+				select new { letter, number, colour };
+
+		Console.Write("The Cartesian Product are : \n");
+		foreach (var product24 in cartesianProduct24)
+		{
+				Console.WriteLine(product24);
+		}
+
+		// Exercise 25
+		Item biscuit = new Item { ItemId = 1, ItemName = "Biscuit  " };
+		Item chocolate = new Item { ItemId = 2, ItemName = "Chocolate" };
+		Item butter = new Item { ItemId = 3, ItemName = "Butter" };
+		Item brade = new Item { ItemId = 4, ItemName = "Brade" };
+		Item honey = new Item { ItemId = 5, ItemName = "Honey" };
+		List<Item> itemList25 = new List<Item> { biscuit, chocolate, butter, brade, honey };
+
+		Purchase purchase1 = new Purchase { PurchaseId= 1, item = biscuit,  PurchaseQty = 458 };
+		Purchase purchase2 = new Purchase { PurchaseId= 2, item = chocolate,  PurchaseQty = 650 };
+		Purchase purchase3 = new Purchase { PurchaseId= 3, item = butter,  PurchaseQty = 800 };
+		Purchase purchase4 = new Purchase { PurchaseId= 4, item = butter,  PurchaseQty = 900 };
+		Purchase purchase5 = new Purchase { PurchaseId= 5, item = butter,  PurchaseQty = 900 };
+		Purchase purchase6 = new Purchase { PurchaseId= 6, item = brade,  PurchaseQty = 650 };
+		Purchase purchase7 = new Purchase { PurchaseId= 7, item = brade,  PurchaseQty = 700 };
+		List<Purchase> purchaseList25 = new List<Purchase> {purchase1, purchase2, purchase3, purchase4, purchase5, purchase6, purchase7 };
+		
+		var innerJoin = 
+				from i25 in itemList25
+				join p25 in purchaseList25 on i25 equals p25.item  
+				select new  
+				{  
+					ItemId = i25.ItemId,  
+					ItemName = i25.ItemName,  
+					PurchaseQty = p25.PurchaseQty  
+				};
+
+		Console.WriteLine("Item ID\t\tItem Name\tPurchase Quantity");
+		Console.WriteLine("-------------------------------------------------------");
+		foreach (var data in innerJoin)  
+		{  
+			Console.WriteLine(data.ItemId + "\t\t" + data.ItemName + "\t\t" + data.PurchaseQty);  
+		}
+
+		// Exercise 26
+		List<Item> itemList26 = new List<Item> { biscuit, chocolate, butter, brade, honey };
+		List<Purchase> purchaseList26 = new List<Purchase> {purchase1, purchase2, purchase3, purchase4, purchase5, purchase6, purchase7 };
+
+		var leftOuterJoin = 
+				from i26 in itemList26
+				join p26 in purchaseList26
+				on i26 equals p26.item
+				into gj
+				from subPur in gj.DefaultIfEmpty(new Purchase())
+				select new
+				{
+					ItemId = i26.ItemId,  
+					ItemName = i26.ItemName,  
+					PurchaseQty = subPur.PurchaseQty  
+				};
+
+		Console.WriteLine("Item ID\t\tItem Name\tPurchase Quantity");
+		Console.WriteLine("-------------------------------------------------------");
+		foreach (var data26 in leftOuterJoin)  
+		{  
+			Console.WriteLine(data26.ItemId + "\t\t" + data26.ItemName + "\t\t" + data26.PurchaseQty);  
+		}
+
+		// Exercise 27
+		List<Item> itemList27 = new List<Item> { biscuit, chocolate, butter, brade, honey };
+		List<Purchase> purchaseList27 = new List<Purchase> {purchase1, purchase2, purchase3, purchase4, purchase5, purchase6, purchase7 };
+
+		var rightOuterJoin = 
+				from p27 in purchaseList27
+				join i27 in itemList27
+				on p27.item.ItemId equals i27.ItemId
+				into gj
+				from subItem in gj.DefaultIfEmpty(new Item())
+				select new
+				{
+					ItemId = subItem.ItemId,  
+					ItemName = subItem.ItemName,  
+					PurchaseQty = p27.PurchaseQty  
+				};
+
+		Console.WriteLine("Item ID\t\tItem Name\tPurchase Quantity");
+		Console.WriteLine("-------------------------------------------------------");
+		foreach (var data27 in rightOuterJoin)  
+		{  
+			Console.WriteLine(data27.ItemId + "\t\t" + data27.ItemName + "\t\t" + data27.PurchaseQty);  
+		}
+
+		// Exercise 28
+		Console.Write("\nHere is the arranged list :\n");
+		IEnumerable<string> cityOrder =
+												cities.OrderBy(str => str.Length)
+												.ThenBy(str => str);
+
+		foreach (string city in cityOrder)
+		{
+			Console.WriteLine(city);    
+			Console.ReadLine();
+		}
+
+		// Exercise 29
+		var citySplit = from i in Enumerable.Range(0, cities.Length)
+                                    group cities[i] by i / 2;
+		
+		foreach(var city in citySplit)
+		{
+			Console.WriteLine(string.Join(";  ", city.ToArray()));
+			Console.WriteLine("-- here is a group of cities --\n");
+		}
+
+
+		// Exercise 30
+		List<Item> itemList30 = new List<Item> { biscuit, chocolate, butter, brade, honey };
+
+		var query30 = 
+				(from it30 in itemList30
+				select it30.ItemName)
+				.Distinct()
+				.OrderBy(it => it);
+		
+		foreach(var i30 in query30)
+		{
+			Console.WriteLine(i30);
+			Console.ReadLine();
+		}
 	}
 }
 
@@ -400,4 +632,17 @@ public class Student{
 	public int StudentID { get; set; }
 	public string StudentName { get; set; }
 	public int StudentPoint { get; set; }
+}
+
+public class Item
+{
+	public int ItemId { get; set; }
+	public string ItemName { get; set; }
+}
+
+public class Purchase
+{
+	public int PurchaseId { get; set; }
+	public int PurchaseQty { get; set; }
+	public Item item {get; set;}
 }
