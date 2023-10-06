@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1OjRSOSMrLuUR0f+KnFvlAuKXx37dNKpd8cndp8kpXc09lZVjFreXfyUFUsrrDj0V7lpxTqe3J4xHgZKQ+BPVg==",
+  "dgSpecHash": "yTLkJ9bhtzqPTPIMpjFZVEmYE5KM3aBHvrDAnZVzZ4lEGEvfIsxdNMSfdoBzOgSCOdFBeWGq/atKSQSpECeiQQ==",
   "success": true,
   "projectFilePath": "/Users/hoangtran/Training/CSharp/CSharpInNutshell/c-sharp/c-sharp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/hoangtran/.nuget/packages/stylecop.analyzers/1.1.118/stylecop.analyzers.1.1.118.nupkg.sha512"
+  ],
   "logs": []
 }
